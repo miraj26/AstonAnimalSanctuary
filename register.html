@@ -3,32 +3,24 @@
 <head>
 	<title>Register</title>
 	<link rel="stylesheet" type="text/css" href="css/header.css"/>
+	<link rel="stylesheet" type="text/css" href="css/form.css"/>
 </head>
 <body>
 	<div id="container">
-		Aston Animal Santuary
+		<a href="index.html">Aston Animal Santuary</a>
 	</div>
-	<div id="main">	<!-- need to format in CSS -->
+	<div id="main">
 		<form id="register" method="post" action="">
-			Username
-			<input type="text" name="username"/>
-			Password
-			<input type="Password" name="password"/>
-			Email
-			<input type="text" name="email"/>
-			First Name
-			<input type="text" name="first"/>
-			Last Name
-			<input type="text" name="second"/>
-			Address
-			<input type="text" name="address"/>
-			Town
-			<input type="text" name="town"/>
-			Postcode
-			<input type="text" name="postcode"/>
-			Contact Number
-			<input type="text" name="number"/>
-			<input type="submit" name="Submit"/>
+			<input type="text" name="username" placeholder="Username" required/>	
+			<input type="Password" name="password" placeholder="Password" required/>
+			<input type="text" name="email" placeholder="Email" required/>
+			<input type="text" name="first" placeholder="First Name" required/>
+			<input type="text" name="second" placeholder="Last Name" required/>
+			<input type="text" name="address" placeholder="Address Line 1" required/>
+			<input type="text" name="town" placeholder="Town" required/>
+			<input type="text" name="postcode" placeholder="Postcode" required/>
+			<input type="text" name="number" placeholder="Contact Number" required/>
+			<input type="submit" name="Submit" required/>
 		</form>
 	</div>
 </body>

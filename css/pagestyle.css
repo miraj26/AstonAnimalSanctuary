@@ -2,20 +2,26 @@ body{
 	margin: 0px;
 }
 
-a{
+#signin{
 	padding: 10px;
+	padding-right: 30px;
 	font-size: 20px;
 	float: right;
+	color: white;
+	text-decoration: none;
 }
 
 a:hover{
-	color: white;
-	float: right;
-}
+		background: #A6A6A6;
+		float: right;
+		opacity: 0.5; 
+		text-decoration: none;
+	}
 
 a:visited{
-	color: white;
+	padding-right: 30px;
 	float: right;
+	text-decoration: none;
 }
 
 #main{
@@ -43,22 +49,22 @@ img{
 #first{
 	font-size: 40px;
 	color: black;
-	padding-left: 250px;
+	left: 20%;
 	text-align: left;
-	top: 500px;
+	top: 70%;
 }
 
 #second{
 	font-size: 30px;
 	text-align: center;
-	top: 500px;
+	top: 75%;
 }
 
 #third{
 	font-size: 50px;
 	color: black;
 	text-align: center;
-	top: 300px;
+	top: 20%;
 }
 
 .fade{
