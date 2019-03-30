@@ -11,11 +11,8 @@
 		$contact = $_POST['number'];
 
 		try{
-			echo "$_POST[username]";
 			$temp = $db->prepare("INSERT INTO Users(Username, Password, FirstName, LastName, Email, Address, Postcode, ContactNumber, Staff) VALUES(?,?,?,?,?,?,?,?,?)");
 			$temp->execute([$username, $password, $fname, $lname, $email, $address, $postcode, $contact, 0]);
-
-			echo("Completed");
 		} catch (PDOException $ex){
 			echo("failed to save to db");
 			echo($ex->getMessage());
