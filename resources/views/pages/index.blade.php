@@ -12,8 +12,8 @@
 	<div id="container">
 		Aston Animal Santuary
 		<!--Add Logo here-->
-		<a href="login.html" id="signin">Login</a>
-		<a href="register.html" id="signin">Register</a>
+		<a href="login" id="signin">Login</a>
+		<a href="register" id="signin">Register</a>
 	</div>
 	<div id="main">
 		@yield('content')
