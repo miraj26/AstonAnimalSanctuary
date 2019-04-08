@@ -5,16 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, intial-scale=1">
 	<title>{{config('app.name')}}</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('/css/header.css') }}"/>
-	<link rel="stylesheet" type="text/css" href="{{ asset('/css/pagestyle.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/pagestyle.css') }}"/>
 </head>
 <body>
-	<div id="container">
-		Aston Animal Santuary
-		<!--Add Logo here-->
-		<a href="login" id="signin">Login</a>
-		<a href="register" id="signin">Register</a>
-	</div>
+	@include('layouts.app')
 	<div id="main">
 		@yield('content')
 	<div class="slide fade">
