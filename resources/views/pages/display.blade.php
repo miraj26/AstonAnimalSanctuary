@@ -24,9 +24,8 @@
 			<td> {{$account->id}} </td>
 			<td> {{$account->name}} </td>
 			<td> {{$account->dob}} </td>
-			 <td> {{$account->description}} </td>
+			<td> {{$account->description}} </td>
 			<td> {{$account->picture}} </td>
-			<td> {{$account->availability}} </td>
 			</tr>
 			@endforeach
 	 	</tbody>

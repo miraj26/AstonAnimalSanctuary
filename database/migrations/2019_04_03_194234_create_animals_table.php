@@ -18,8 +18,8 @@ class CreateAnimalsTable extends Migration
             $table->string('name');
             $table->date('dob');
             $table->string('description');
-            $table->binary('picture');
-            $table->boolean('availability');
+            $table->binary('image');
+            $table->boolean('availability')->default(1);
         });
     }
 

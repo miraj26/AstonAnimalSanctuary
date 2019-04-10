@@ -14,8 +14,8 @@
 	 <table class="table table-striped table-bordered table-hover">
 	 	<thead>
 			 <tr>
-			 <th> id</th><th> User-id</th><th> Account no</th>
-			 <th> Type </th><th> balance </th><th> Interest</th>
+			 <th> id</th><th> name</th><th> dob</th>
+			 <th> description </th><th> picture </th>
 	 	</tr>
 	 	</thead>
 	 	<tbody>
@@ -24,8 +24,8 @@
 			<td> {{$account->id}} </td>
 			<td> {{$account->name}} </td>
 			<td> {{$account->dob}} </td>
-			 <td> {{$account->description}} </td>
-			<td> {{$account->picture}} </td>
+			<td> {{$account->description}} </td>
+			<td> {{$account->image}} </td>
 			<td> {{$account->availability}} </td>
 			</tr>
 			@endforeach

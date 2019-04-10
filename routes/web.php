@@ -14,9 +14,6 @@
 Route::get('/', 'PagesController@index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/display','AnimalController@display')->name('display_animal');
 Route::post('/login/custom', [
 	'uses' => 'LoginController@login',
 	'as' => 'login.custom'
@@ -30,3 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 		return view('dashboard');
 	})->name('dashboard');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('animals/index','AnimalController@index')->name('display_animal');
+Route::resource('animals', 'AnimalController'); 

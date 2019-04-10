@@ -14,9 +14,9 @@
                         </div>
                     @endif
 
-                    You are in the admin portal!
+                    Welcome to the admin portal!
                     <br>
-                    <a href="{{ route('display_animal')}}" class="btn btn-primary">Display Accounts</a>
+                    <a href="{{ route('display_animal')}}" class="btn btn-primary">Display Animals</a>
                 </div>
             </div>
         </div>
