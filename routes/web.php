@@ -13,9 +13,20 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/register', 'PagesController@register');
-
-Route::get('/login', 'PagesController@login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/display','AnimalController@display')->name('display_animal');
+Route::post('/login/custom', [
+	'uses' => 'LoginController@login',
+	'as' => 'login.custom'
+]);
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/home', function(){
+		return view('home');
+	})->name('home');
+	Route::get('/dashboard', function(){
+		return view('dashboard');
+	})->name('dashboard');
+});

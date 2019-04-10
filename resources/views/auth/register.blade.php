@@ -10,30 +10,43 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="firstname" value="{{ old('firstname') }}" required autofocus>
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('username'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+                            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required>
+                                <input id="firstName" type="text" class="form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required>
 
-                                @if ($errors->has('lastname'))
+                                @if ($errors->has('firstName'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                        <strong>{{ $errors->first('firstName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lastName" type="text" class="form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required>
+
+                                @if ($errors->has('lastName'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('lastName') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -93,25 +106,11 @@
                             <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
-                                <input id="postcode" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ old('postcode') }}" maxlength="8" required>
+                                <input id="postcode" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ old('postcode') }}" required>
 
                                 @if ($errors->has('postcode'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('postcode') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                         <div class="form-group row">
-                            <label for="contactnumber" class="col-md-4 col-form-label text-md-right">{{ __('Contact Number') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="contactnumber" type="text" class="form-control{{ $errors->has('contactnumber') ? ' is-invalid' : '' }}" name="contactnumber" value="{{ old('contactnumber') }}" maxlength="11" required>
-
-                                @if ($errors->has('contactnumber'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('contactnumber') }}</strong>
                                     </span>
                                 @endif
                             </div>

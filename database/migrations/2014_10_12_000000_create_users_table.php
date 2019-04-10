@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('address');
             $table->string('postcode');
-            $table->boolean('staff');
+            $table->boolean('role')->default(0);
             $table->timestamps();
         });
     }
