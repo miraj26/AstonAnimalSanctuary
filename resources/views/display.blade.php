@@ -26,7 +26,6 @@
 			<td> {{$account->dob}} </td>
 			<td> {{$account->description}} </td>
 			<td> {{$account->image}} </td>
-			<td> {{$account->availability}} </td>
 			</tr>
 			@endforeach
 	 	</tbody>

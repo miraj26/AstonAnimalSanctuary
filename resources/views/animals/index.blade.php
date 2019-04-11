@@ -13,6 +13,7 @@
 						<th>DOB</th>
 						<th>Description</th>
 						<th>Image</th>
+						<th>Availability</th>
 						<th colspan="3">Action</th>
 					</tr>
 				</thead>
@@ -23,6 +24,7 @@
 						<td>{{$animal['dob']}}</td>
 						<td>{{$animal['description']}}</td>
 						<td>{{$animal['image']}}</td>
+						<td>{{$animal['availability']}}</td>
 						<td><a href="{{action('AnimalController@show', $animal['id'])}}" class="btn btn- primary">Details</a></td>
 						<td><a href="{{action('AnimalController@edit', $animal['id'])}}" class="btn
 					btn- warning">Edit</a></td>

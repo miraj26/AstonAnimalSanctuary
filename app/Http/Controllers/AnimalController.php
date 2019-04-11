@@ -9,10 +9,6 @@ use Gate;
 
 class AnimalController extends Controller
 {
-    public function display(){
-    	$animalsQuery = Animals::all();
-    	return view('/display',array('animals'=>$animalsQuery));
-    }
 
     public function index(){
     	$animals = Animals::all()->toArray();

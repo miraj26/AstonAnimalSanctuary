@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Animals;
+use App\AdoptionRequest;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $animalsQuery = Animals::all();
+        $username = \Auth::user()->username;
+        $adoptionsQuery = AdoptionRequest::all();
+        return view('/home',array('animals'=>$animalsQuery,'username'=>$username, 'adoptions'=>$adoptionsQuery));
+    }
+
+    public function requested(){
+        return view('requestmade');
     }
 }

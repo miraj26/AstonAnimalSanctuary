@@ -40,12 +40,14 @@
 		</div>
 		<div class="col-md-8">
 			<label>Image</label>
-			<input type="file" name="image" />
+			<input type="file" name="image"/>
 		</div>
 		<div class="col-md-8">
-			<label>Pet Availability</label>
-			<input type="hidden" name="availability" value="0">
-			<input type="checkbox" name="availability"/>
+			<label>Pet Availability</label>			
+			<select name="availability">
+				<option value="1">Available</option>
+				<option value="0">Not Available</option>
+			</select>
 		</div>
 		<div class="col-md-6 col-md-offset-4">
 			<input type="submit" class="btn btn-primary" />

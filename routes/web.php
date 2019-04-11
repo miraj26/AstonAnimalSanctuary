@@ -30,4 +30,9 @@ Route::group(['middleware' => 'auth'], function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('animals/index','AnimalController@index')->name('display_animal');
+Route::get('/requestmade','HomeController@requested')->name('display_request');
 Route::resource('animals', 'AnimalController'); 
+
+Route::get('/adoption_requests/{animal}', 'AdoptionRequestController@create');
+Route::put('adoption_requests/{animal}', 'AdoptionRequestController@update');
+Route::patch('adoption_requests/{animal}', 'AdoptionRequestController@update');
