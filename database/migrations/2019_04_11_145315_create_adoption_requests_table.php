@@ -15,8 +15,9 @@ class CreateAdoptionRequestsTable extends Migration
     {
         Schema::create('adoption_requests', function (Blueprint $table) {
             $table->integer('animalId');
+            $table->string('petname');
             $table->string('username');
-            $table->enum('accepted', ['approved','pending', 'rejected'])->default('pending');
+            $table->enum('accepted', ['Approved','Pending', 'Rejected'])->default('Pending');
             $table->timestamps();
 
             $table->foreign('animalId')->references('id')->on('animals');

@@ -26,10 +26,12 @@ class AdoptionRequestController extends Controller
         $animals = Animals::find($id);
         $this->validate(request(),[
             'id' => 'required',
+            'petname' => 'required',
             'username' => 'required',
         ]);
         $adopt = new AdoptionRequest;
         $adopt->animalId = $request->input('id');
+        $adopt->petname = $request->input('petname');
         $adopt->username = $request->input('username');
         $adopt->created_at = now();
         $adopt->save();

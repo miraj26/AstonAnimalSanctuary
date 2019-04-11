@@ -31,7 +31,7 @@
 		</div>
 		<div class="col-md-8">
 			<label>Pet Name</label>
-			<input type="text" name="name" value="{{$animals->name}}" readonly/>
+			<input type="text" name="petname" value="{{$animals->name}}" readonly/>
 		</div>
 		<div class="col-md-8">
 			<label>Username</label>

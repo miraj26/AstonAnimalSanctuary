@@ -34,7 +34,7 @@
                         <td>
                         @forelse($adoptions as $adoption)
                         @if($adoption->username == $username && $adoption->animalId == $animal->id)
-                        Processing
+                        Request Made
                         <?php $requested = true; ?>
                         @endif
                         @empty

@@ -38,3 +38,7 @@ Route::put('adoption_requests/{animal}', 'AdoptionRequestController@update');
 Route::patch('adoption_requests/{animal}', 'AdoptionRequestController@update');
 
 Route::get('/allrequests', 'HomeController@allrequest')->name('all_requests');
+Route::get('/pending', 'DashboardController@pending')->name('pending');
+Route::get('/requests', 'DashboardController@requests')->name('requests');
+//Route::resource('pending', 'DashboardController');
+Route::post('/pending/{animal/{user}', 'DashboardController@review');

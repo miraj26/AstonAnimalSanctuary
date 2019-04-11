@@ -17,6 +17,8 @@
                     Welcome to the admin portal!
                     <br>
                     <a href="{{ route('display_animal')}}" class="btn btn-primary">Display Animals</a>
+                    <a href="{{ route('pending')}}" class="btn btn-primary">Pending Requests</a>
+                    <a href="{{ route('requests')}}" class="btn btn-primary">View All Requests</a>
                 </div>
             </div>
         </div>
