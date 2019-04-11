@@ -28,7 +28,6 @@ class AdoptionRequestController extends Controller
             'id' => 'required',
             'username' => 'required',
         ]);
-
         $adopt = new AdoptionRequest;
         $adopt->animalId = $request->input('id');
         $adopt->username = $request->input('username');

@@ -36,3 +36,5 @@ Route::resource('animals', 'AnimalController');
 Route::get('/adoption_requests/{animal}', 'AdoptionRequestController@create');
 Route::put('adoption_requests/{animal}', 'AdoptionRequestController@update');
 Route::patch('adoption_requests/{animal}', 'AdoptionRequestController@update');
+
+Route::get('/allrequests', 'HomeController@allrequest')->name('all_requests');

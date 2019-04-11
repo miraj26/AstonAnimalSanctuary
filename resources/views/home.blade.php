@@ -11,6 +11,8 @@
                  {{ session('status') }}
                  </div>
                  @endif
+                 <a href="{{route('all_requests')}}">All Requests Made</a>
+                 <br/>
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>
@@ -20,18 +22,29 @@
                     </thead>
                     <tbody>
                         @foreach($animals as $animal)
-                        @foreach($adoptions as $adopt)
-                        @if($animal->availability == 1 && $adopt->userId != $username && $adopt->animalId != $animal->id)
+                        <?php $requested = false; ?>
+                        @if($animal->availability == 1)
                         <tr>
                         <td> {{$animal->name}} </td>
                         <td> {{$animal->dob}} </td>
                         <td> {{$animal->description}} </td>
-                        <td><center><img style="width:25%;height:25%"
+                        <td>
+                        <center><img style="width:25%;height:25%"
         src="{{ asset('storage/images/'.$animal->image)}}"></center></td>
-                        <td><a href="{{action('AdoptionRequestController@create', $animal['id'])}}" class="btn btn-primary" role="button">Make Request</a></td>
+                        <td>
+                        @forelse($adoptions as $adoption)
+                        @if($adoption->username == $username && $adoption->animalId == $animal->id)
+                        Processing
+                        <?php $requested = true; ?>
+                        @endif
+                        @empty
+                        @endforelse
+                        @if($requested == false)
+                        <a href="{{action('AdoptionRequestController@create', $animal['id'])}}" class="btn btn-primary" role="button">Make Request</a>
+                        @endif
+                        </td>
                         </tr>
                         @endif
-                        @endforeach
                         @endforeach
                     </tbody>
                 </table>

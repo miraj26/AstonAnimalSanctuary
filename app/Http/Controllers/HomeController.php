@@ -34,4 +34,10 @@ class HomeController extends Controller
     public function requested(){
         return view('requestmade');
     }
+
+    public function allrequest(){
+        $adoptionsQuery = AdoptionRequest::all();
+        $username = \Auth::user()->username;
+        return view('adoption_requests.requestsmade', array('username'=>$username, 'adoptions'=>$adoptionsQuery));
+    }
 }
