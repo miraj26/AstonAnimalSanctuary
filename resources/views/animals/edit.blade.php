@@ -45,8 +45,8 @@
 		<div class="col-md-8">
 			<label>Pet Availability</label>			
 			<select name="availability">
-				<option value="1">Available</option>
-				<option value="0">Not Available</option>
+				<option value="Available">Available</option>
+				<option value="Unavailable">Not Available</option>
 			</select>
 		</div>
 		<div class="col-md-6 col-md-offset-4">

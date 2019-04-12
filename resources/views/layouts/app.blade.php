@@ -33,8 +33,25 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="nav navbar-nav">
+                    	@if(Auth::check() && Auth::user()->role == 0)
+                        	<li class="nav-item">
+                    			<a class="nav-link" href="{{route('all_requests')}}"> All Requests Made </a>
+                    		</li>
+                    		<li>
+                    			<a class="nav-link" href="{{route('home')}}"> Available Pets </a>
+                    		</li>
+                    	@elseif(Auth::check() && Auth::user()->role == 1)
+                    		<li class="nav-item">
+                    			<a href="{{ route('display_animal')}}" class="nav-link">Display Animals</a>
+                    		</li>
+                    		<li>
+                    			<a href="{{ route('pending')}}" class="nav-link">Pending Requests</a>
+                    		</li>
+                    		<li>
+                    			<a href="{{ route('requests')}}" class="nav-link">View All Requests</a>
+                    		</li>
+                    	@endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

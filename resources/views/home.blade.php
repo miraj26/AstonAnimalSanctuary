@@ -11,7 +11,6 @@
                  {{ session('status') }}
                  </div>
                  @endif
-                 <a href="{{route('all_requests')}}">All Requests Made</a>
                  <br/>
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
@@ -23,7 +22,7 @@
                     <tbody>
                         @foreach($animals as $animal)
                         <?php $requested = false; ?>
-                        @if($animal->availability == 1)
+                        @if($animal->availability == 'Available')
                         <tr>
                         <td> {{$animal->name}} </td>
                         <td> {{$animal->dob}} </td>

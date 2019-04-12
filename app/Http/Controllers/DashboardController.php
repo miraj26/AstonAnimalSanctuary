@@ -25,7 +25,7 @@ class DashboardController extends Controller
 
     	if($adoptions->accepted == 'Approved'){
     		$animal = Animals::where('id', '=', $animalId)->first();
-    		$animal->availability = '0';
+    		$animal->availability = 'Unavailable';
     		$animal->save();
 
 	    	$other = AdoptionRequest::where("animalId", '=', $animalId)->where('accepted', '=', 'Pending')->get();

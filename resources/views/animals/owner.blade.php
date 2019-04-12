@@ -24,11 +24,12 @@
 						<td>{{$user['lastName']}}</td>
 						<td>{{$user['email']}}</td>
 						<td>{{$user['address']}}</td>
-						<td>{{$user['postcode']}}</td>
-											
+						<td>{{$user['postcode']}}</td>				
 					</tr>
 				</tbody>
 				</table>
+				<br/>
+					<a href="{{ route('display_animal')}}" class="btn btn-primary" role="button">Back to the list</a>
 				</div>
 			</div>
 		</div>

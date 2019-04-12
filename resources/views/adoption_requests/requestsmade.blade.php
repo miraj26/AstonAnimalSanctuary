@@ -11,7 +11,6 @@
                  {{ session('status') }}
                  </div>
                  @endif
-                 <a href="{{route('home')}}">Available Pets</a>
                  <br/>
                  <table class="table table-striped table-bordered table-hover">
                     <thead>

@@ -14,7 +14,7 @@
 						<th>Description</th>
 						<th>Image</th>
 						<th>Availability</th>
-						<th>Username of Owner</th>
+						<th>Owner</th>
 						<th colspan="3">Action</th>
 					</tr>
 				</thead>
