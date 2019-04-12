@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Animals;
+use App\AdoptionRequest;
+use App\User;
 use Gate;
 
 class AnimalController extends Controller
@@ -12,7 +14,9 @@ class AnimalController extends Controller
 
     public function index(){
     	$animals = Animals::all()->toArray();
-    	return view('animals.index', compact('animals'));
+        $users = User::all();
+        $adoptions = AdoptionRequest::all();
+    	return view('animals.index', compact('animals', 'users', 'adoptions'));
     }
 
     public function create(){

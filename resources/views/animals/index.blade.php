@@ -14,6 +14,7 @@
 						<th>Description</th>
 						<th>Image</th>
 						<th>Availability</th>
+						<th>Username of Owner</th>
 						<th colspan="3">Action</th>
 					</tr>
 				</thead>
@@ -25,6 +26,9 @@
 						<td>{{$animal['description']}}</td>
 						<td>{{$animal['image']}}</td>
 						<td>{{$animal['availability']}}</td>
+						<?php $adopt = $adoptions->where('animalId', '=', $animal['id'])->where('accepted', '=', 'Approved')->first();
+							 ?>
+						<td><a href="{{route('user', ['username' => $adopt['username']])}}">{{$adopt['username']}}</a></td>
 						<td><a href="{{action('AnimalController@show', $animal['id'])}}" class="btn btn- primary">Details</a></td>
 						<td><a href="{{action('AnimalController@edit', $animal['id'])}}" class="btn
 					btn- warning">Edit</a></td>
