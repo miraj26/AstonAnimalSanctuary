@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Animals;
 use App\AdoptionRequest;
 
 class DashboardController extends Controller
@@ -17,22 +18,23 @@ class DashboardController extends Controller
     	return view('admin.requests', array('adoptions' => $adoptionsQuery));
     }
 
-    public function review(Request $request, $id, $username){
-    	$adoptions = AdoptionRequest::where('animalId', '=', '$id')->where('username', '=', '$username')->get();
+    public function review(Request $request, $id, $animalId){
+    	$adoptions = AdoptionRequest::find($id);
     	$adoptions->accepted = $request->input('accepted');
     	$adoptions->save();
+
+    	if($adoptions->accepted == 'Approved'){
+    		$animal = Animals::where('id', '=', $animalId)->first();
+    		$animal->availability = '0';
+    		$animal->save();
+
+	    	$other = AdoptionRequest::where("animalId", '=', $animalId)->where('accepted', '=', 'Pending')->get();
+	    	foreach ($other as $record) {
+	    		$record->accepted = 'Rejected';
+	    		$record->save();
+	    	}
+	    }
+
     	return back()->with('success', 'Adoption Request has been updated');
-    }
-
-    public function index(){
-
-    }
-
-    public function store(){
-
-    }
-
-    public function create(){
-
     }
 }

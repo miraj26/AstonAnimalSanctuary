@@ -27,7 +27,7 @@
                             <td>{{$adoption->petname}} </td>
                             <td>{{$adoption->username}}</td>
                             <td>
-                                <form class="form-horizontal" method="POST" action="{{ action('DashboardController@review', $adoption->animalId, $adoption->username) }}" enctype="multipart/form-data" >
+                                <form class="form-horizontal" method="POST" action="{{ action('DashboardController@review', [$adoption->id, $adoption->animalId]) }}" enctype="multipart/form-data" >
                                     @csrf
                                     <select name="accepted">
                                         <option value="Pending">Pending</option>

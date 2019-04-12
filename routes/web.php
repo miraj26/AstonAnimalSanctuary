@@ -41,4 +41,4 @@ Route::get('/allrequests', 'HomeController@allrequest')->name('all_requests');
 Route::get('/pending', 'DashboardController@pending')->name('pending');
 Route::get('/requests', 'DashboardController@requests')->name('requests');
 //Route::resource('pending', 'DashboardController');
-Route::post('/pending/{animal/{user}', 'DashboardController@review');
+Route::post('/pending/{adoption}/{animal}', ['as' => 'review', 'uses' => 'DashboardController@review']);
