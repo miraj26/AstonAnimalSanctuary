@@ -35,14 +35,17 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                     	@if(Auth::check() && Auth::user()->role == 0)
-                        	<li class="nav-item">
+                        	<li>
+                                <a class="nav-link" href="{{route('home')}}"> Home </a>
+                            </li>
+                            <li class="nav-item">
                     			<a class="nav-link" href="{{route('all_requests')}}"> All Requests Made </a>
-                    		</li>
-                    		<li>
-                    			<a class="nav-link" href="{{route('home')}}"> Available Pets </a>
                     		</li>
                     	@elseif(Auth::check() && Auth::user()->role == 1)
                     		<li class="nav-item">
+                                <a href="{{ route('dashboard')}}" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
                     			<a href="{{ route('display_animal')}}" class="nav-link">Display Animals</a>
                     		</li>
                     		<li>

@@ -15,8 +15,8 @@
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>
-                         <th> name</th><th> dob</th>
-                         <th> description </th><th> picture </th><th>Request</th>
+                         <th> Name</th><th> DOB</th>
+                         <th> Description </th><th> Type</th><th> Picture </th><th>Request</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,8 +27,9 @@
                         <td> {{$animal->name}} </td>
                         <td> {{$animal->dob}} </td>
                         <td> {{$animal->description}} </td>
+                        <td> {{$animal->type}} </td>
                         <td>
-                        <center><img style="width:25%;height:25%"
+                        <center><img style="width:50%;height:50%"
         src="{{ asset('storage/images/'.$animal->image)}}"></center></td>
                         <td>
                         @forelse($adoptions as $adoption)

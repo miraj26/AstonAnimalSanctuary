@@ -40,7 +40,21 @@
 		</div>
 		<div class="col-md-8">
 			<label>Image</label>
-			<input type="file" name="image"/>
+			<input type="file" name="image" multiple="multiple" />
+		</div>
+		<div class="col-md-8">
+			<label>Type</label>
+			<select name="type">
+				<option value="Dog">Dog</option>
+				<option value="Cat">Cat</option>
+				<option value="Aquarium">Aquarium</option>
+				<option value="Bird">Bird</option>
+				<option value="Mammal">Mammal</option>
+				<option value="Rodent">Rodent</option>
+				<option value="Reptile">Reptile</option>
+				<option value="Amphiban">Amphibian</option>
+				<option value="Horse">Horse</option>
+			</select>
 		</div>
 		<div class="col-md-8">
 			<label>Pet Availability</label>			
@@ -52,6 +66,7 @@
 		<div class="col-md-6 col-md-offset-4">
 			<input type="submit" class="btn btn-primary" />
 			<input type="reset" class="btn btn-primary" />
+			<a href="{{ route('display_animal')}}" class="btn btn-primary">Close</a>
 			</a>
 		</div>
 		</form>

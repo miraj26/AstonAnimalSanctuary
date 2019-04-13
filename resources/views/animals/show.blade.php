@@ -4,15 +4,14 @@
 	<div class="row justify-content-center">
 	<div class="col-md-8 ">
 	<div class="card">
-	<div class="card-header">Display all Animals</div>
+	<div class="card-header">{{$animals['name']}} Record</div>
 	<div class="card-body">
 	<table class="table table-striped" border="1" >
-		<tr> <td> <b>Name </th> <td> {{$animals['name']}}</td></tr>
+		<tr> <td colspan='2' ><img src="{{ asset('storage/images/'.$animals['image'])}}"></td></tr>
+		<tr> <th> <b>Name </th> <td> {{$animals['name']}}</td></tr>
 		<tr> <th>DOB</th> <td>{{$animals['dob']}}</td></tr>
 		<tr> <th>Description </th> <td>{{$animals['description']}}</td></tr>
-		<tr> <td>Image </th> <td>{{$animals['image']}}</td></tr>
-		<tr> <td colspan='2' ><img style="width:100%;height:100%"
-		src="{{ asset('storage/images/'.$animals['image'])}}"></td></tr>
+		<tr> <th>Type </th> <td>{{$animals['type']}}</td></tr>
 	</table>
 	<table><tr>
 		<td><a href="{{ route('display_animal')}}" class="btn btn-primary" role="button">Back to the list</a></td>

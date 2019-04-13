@@ -27,7 +27,8 @@ class AnimalController extends Controller
     	$animal = $this->validate(request(), [
     		'name' => 'required',
     		'dob' => 'required',
-    		'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:500',
+    		'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:500',
+            'type' => 'required'
     	]);
     	if($request->hasFile('image')){
     		$fileNameWithExt = $request->file('image')->getClientOriginalName();
@@ -44,6 +45,7 @@ class AnimalController extends Controller
     	$animal->description = $request->input('description');
     	$animal->created_at = now();
     	$animal->image = $fileNameToStore;
+        $animal->type = $request->input('type');
     	$animal->save();
     	return back()->with('success', 'Animal has been added');
     }
@@ -56,6 +58,8 @@ class AnimalController extends Controller
     public function destroy($id){
     	$animal = Animals::find($id);
     	$animal->delete();
+        $adoption = AdoptionRequest::where('animalId', '=', $id);
+        $adoption->delete();
     	return redirect('animals')->with('success', 'Animal has been deleted');
     }
 
@@ -63,7 +67,8 @@ class AnimalController extends Controller
     	$animals = Animals::find($id);
     	$this->validate(request(),[
     		'name' => 'required',
-    		'dob' => 'required'
+    		'dob' => 'required',
+            'type' => 'required'
     	]);
 
     	$animals->name = $request->input('name');
@@ -80,9 +85,10 @@ class AnimalController extends Controller
     		$fileNameToStore = 'noimage.jpg';
     	}
     	$animals->image=$fileNameToStore;
+        $animal->type = $request->input('type');
     	$animals->availability = $request->input('availability');
     	$animals->save();
-    	return redirect('animals')->with('success', 'Animal has not been updated');
+    	return redirect('animals')->with('success', 'Animal has been updated');
     }
 
     public function edit($id){

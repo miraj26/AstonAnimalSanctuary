@@ -20,6 +20,7 @@ class CreateAnimalsTable extends Migration
             $table->string('description');
             $table->binary('image');
             $table->enum('availability', ['Available', 'Unavailable'])->default('Available');
+            $table->enum('type', ['Dog', 'Cat', 'Aquarium', 'Bird', 'Mammal', 'Rodent', 'Reptile', 'Amphibian', 'Horse'])->default('Dog');
             $table->timestamps();
         });
     }

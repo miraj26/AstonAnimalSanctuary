@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-md-8 ">
+		<div >
 			<div class="card">
 			<div class="card-header">Display all Pets</div>
 			<div class="card-body">
@@ -15,7 +15,7 @@
 						<th>Image</th>
 						<th>Availability</th>
 						<th>Owner</th>
-						<th colspan="3">Action</th>
+						<th colspan="2">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -24,7 +24,7 @@
 						<td>{{$animal['name']}}</td>
 						<td>{{$animal['dob']}}</td>
 						<td>{{$animal['description']}}</td>
-						<td>{{$animal['image']}}</td>
+						<td><img style="width:70%; height:70%;"src="{{ asset('storage/images/'.$animal['image'])}}"></td>
 						<td>{{$animal['availability']}}</td>
 						<?php $adopt = $adoptions->where('animalId', '=', $animal['id'])->where('accepted', '=', 'Approved')->first();
 							 ?>

@@ -7,26 +7,12 @@
 			<div class="card-header">Owner Details</div>
 			<div class="card-body">
 			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Username</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Postcode</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{{$user['username']}}</td>
-						<td>{{$user['firstName']}}</td>
-						<td>{{$user['lastName']}}</td>
-						<td>{{$user['email']}}</td>
-						<td>{{$user['address']}}</td>
-						<td>{{$user['postcode']}}</td>				
-					</tr>
-				</tbody>
+				<tr><th>Username</th><td>{{$user['username']}}</td></tr>
+				<tr><th>First Name</th><td>{{$user['firstName']}}</td></tr>
+				<tr><th>Last Name</th><td>{{$user['lastName']}}</td></tr>
+				<tr><th>Email</th><td>{{$user['email']}}</td></tr>
+				<tr><th>Address</th><td>{{$user['address']}}</td></tr>
+				<tr><th>Postcode</th><td>{{$user['postcode']}}</td></tr>
 				</table>
 				<br/>
 					<a href="{{ route('display_animal')}}" class="btn btn-primary" role="button">Back to the list</a>
