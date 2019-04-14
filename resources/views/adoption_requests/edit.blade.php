@@ -39,7 +39,7 @@
 		</div>
 		<div class="col-md-6 col-md-offset-4">
 			<input type="submit" class="btn btn-primary" />
-			<a href="{{ route('home')}}" class="btn btn-primary" role="button">Cancel</a>
+			<a href="{{ route('available_pets')}}" class="btn btn-primary" role="button">Cancel</a>
 		</div>
 	</form>
 	</div>

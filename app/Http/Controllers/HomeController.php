@@ -25,10 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $animalsQuery = Animals::all();
-        $username = \Auth::user()->username;
-        $adoptionsQuery = AdoptionRequest::all();
-        return view('/home',array('animals'=>$animalsQuery,'username'=>$username, 'adoptions'=>$adoptionsQuery));
+        $user = \Auth::user();
+        return view('/home',array('user'=>$user));
     }
 
     public function requested(){
@@ -39,5 +37,12 @@ class HomeController extends Controller
         $adoptionsQuery = AdoptionRequest::all();
         $username = \Auth::user()->username;
         return view('adoption_requests.requestsmade', array('username'=>$username, 'adoptions'=>$adoptionsQuery));
+    }
+
+    public function pets(){
+        $animalsQuery = Animals::all();
+        $username = \Auth::user()->username;
+        $adoptionsQuery = AdoptionRequest::all();
+        return view('adoption_requests.availablepets', array('animals'=>$animalsQuery,'username'=>$username, 'adoptions'=>$adoptionsQuery));
     }
 }

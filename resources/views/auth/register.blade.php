@@ -106,7 +106,7 @@
                             <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
-                                <input id="postcode" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ old('postcode') }}" required>
+                                <input id="postcode" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ old('postcode') }}" maxlength="8" required>
 
                                 @if ($errors->has('postcode'))
                                     <span class="invalid-feedback" role="alert">
