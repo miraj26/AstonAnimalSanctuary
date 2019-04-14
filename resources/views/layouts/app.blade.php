@@ -51,6 +51,9 @@
                             <li class="nav-item">
                     			<a href="{{ route('display_animal')}}" class="nav-link">Display Animals</a>
                     		</li>
+                            <li>
+                                <a href="{{action('AnimalController@create')}}" class="nav-link">Add Pet</a>
+                            </li>
                     		<li>
                     			<a href="{{ route('pending')}}" class="nav-link">Pending Requests</a>
                     		</li>

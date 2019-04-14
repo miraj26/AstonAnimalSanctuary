@@ -11,7 +11,11 @@
                  {{ session('status') }}
                  </div>
                  @endif
-                 <br/>
+                 Popular Pet Types:
+                 <a href="availablepets/?type=Dog">Dog</a> |
+                 <a href="availablepets/?type=Cat">Cat</a> |
+                 <a href="availablepets/">Reset</a>
+
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>
@@ -29,8 +33,7 @@
                         <td> {{$animal->description}} </td>
                         <td> {{$animal->type}} </td>
                         <td>
-                        <center><img style="width:50%;height:50%"
-        src="{{ asset('storage/images/'.$animal->image)}}"></center></td>
+                        <center><img style="width:50%;height:50%" src="{{ asset('storage/images/'.$animal->image)}}"></center></td>
                         <td>
                         @forelse($adoptions as $adoption)
                         @if($adoption->username == $username && $adoption->animalId == $animal->id)
@@ -48,6 +51,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $animals->links()}}
                 </div>
             </div>
         </div>

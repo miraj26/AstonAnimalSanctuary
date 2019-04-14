@@ -40,7 +40,12 @@ class HomeController extends Controller
     }
 
     public function pets(){
-        $animalsQuery = Animals::all();
+        if(request()->has('type')){
+            $animalsQuery = Animals::where('type', request('type'))->paginate(10)->appends('type', request('type'));
+        } else{
+            $animalsQuery = Animals::paginate(10);
+        }
+        
         $username = \Auth::user()->username;
         $adoptionsQuery = AdoptionRequest::all();
         return view('adoption_requests.availablepets', array('animals'=>$animalsQuery,'username'=>$username, 'adoptions'=>$adoptionsQuery));
