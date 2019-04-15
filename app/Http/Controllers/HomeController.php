@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Animals;
 use App\AdoptionRequest;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -50,4 +51,26 @@ class HomeController extends Controller
         $adoptionsQuery = AdoptionRequest::all();
         return view('adoption_requests.availablepets', array('animals'=>$animalsQuery,'username'=>$username, 'adoptions'=>$adoptionsQuery));
     }
+
+    public function update(Request $request, $id){
+        $users = User::find($id);
+        $this->validate(request(),[
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'address' => 'required',
+            'postcode' => 'required',
+        ]);
+        $users->firstName = $request->input('firstName');
+        $users->lastName = $request->input('lastName');
+        $users->address = $request->input('address');
+        $users->postcode = $request->input('postcode');
+        $users->save();
+        return redirect('home')->with('success', 'User details have been updated');
+    }
+
+    public function edit($id){
+        $users = User::find($id);
+        return view('edituser', compact('users'));
+    }
+
 }

@@ -13,7 +13,6 @@ class AnimalController extends Controller
 {
 
     public function index(){
-    	//$animals = Animals::all()->toArray();
         if(request()->has('type')){
             $animals = Animals::where('type', request('type'))->paginate(10)->appends('type', request('type'));
         } else{

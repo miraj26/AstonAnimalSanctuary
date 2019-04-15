@@ -11,7 +11,7 @@
                  {{ session('status') }}
                  </div>
                  @endif
-                 <br/>
+                 
                  Welcome to your Aston Animal Sanctuary web portal!
                  <br/>
                  Here you can browse all the available pets, and view the requests you have already made
@@ -25,6 +25,7 @@
                 	<tr><th>Address</th><td>{{$user->address}}</td></tr>
                 	<tr><th>Postcode</th><td>{{$user->postcode}}</td></tr>
                 </table>
+                <a href="{{action('HomeController@edit', $user['id'])}}" class="btn btn- warning">Edit Details</a>
                 </div>
             </div>
         </div>

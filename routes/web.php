@@ -45,4 +45,8 @@ Route::group(['middleware' => ['auth', 'user']], function(){
 	Route::put('adoption_requests/{animal}', 'AdoptionRequestController@update');
 	Route::patch('adoption_requests/{animal}', 'AdoptionRequestController@update');
 	Route::get('/allrequests', 'HomeController@allrequest')->name('all_requests');
+	Route::get('home/{user}/edituser', 'HomeController@edit');
+	
+	Route::put('home/{user}', 'HomeController@update');
+	Route::patch('home/{user}', 'HomeController@update');
 });
