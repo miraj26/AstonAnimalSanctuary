@@ -43,20 +43,6 @@
 			<input type="file" name="image" multiple="multiple" />
 		</div>
 		<div class="col-md-8">
-			<label>Type</label>
-			<select name="type">
-				<option value="Dog">Dog</option>
-				<option value="Cat">Cat</option>
-				<option value="Aquarium">Aquarium</option>
-				<option value="Bird">Bird</option>
-				<option value="Mammal">Mammal</option>
-				<option value="Rodent">Rodent</option>
-				<option value="Reptile">Reptile</option>
-				<option value="Amphiban">Amphibian</option>
-				<option value="Horse">Horse</option>
-			</select>
-		</div>
-		<div class="col-md-8">
 			<label>Pet Availability</label>			
 			<select name="availability">
 				<option value="Available">Available</option>

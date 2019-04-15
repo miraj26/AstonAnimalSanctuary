@@ -11,11 +11,23 @@
                  {{ session('status') }}
                  </div>
                  @endif
-                 Popular Pet Types:
-                 <a href="availablepets/?type=Dog">Dog</a> |
-                 <a href="availablepets/?type=Cat">Cat</a> |
-                 <a href="availablepets/">Reset</a>
-
+                 <form>
+                 	Filter by Pet Type:
+	                 <select name="type">
+	                 	<option value="Dog">Dog</option>
+	                 	<option value="Cat">Cat</option>
+	                 	<option value="Aquarium">Aquarium</option>
+	                 	<option value="Bird">Bird</option>
+	                 	<option value="Mammal">Mammal</option>
+	                 	<option value="Rodent">Rodent</option>
+	                 	<option value="Reptile">Reptile</option>
+	                 	<option value="Amphiban">Amphibian</option>
+	                 	<option value="Horse">Horse</option>
+	                 </select>
+	                 <input type="submit" /> |
+	                 <a href="availablepets/"> Reset </a>
+	             </form>
+	             <br/>
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>

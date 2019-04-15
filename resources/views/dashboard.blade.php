@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    Welcome to the admin portal!
+                    Welcome to the admin portal!<br/> <br/>
+                    You can view all pending requests <br/>
+                    Add pets up for adoption <br/>
+                    and view all pets on the system.
                     
                 </div>
             </div>

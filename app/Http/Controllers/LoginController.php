@@ -16,9 +16,9 @@ class LoginController extends Controller
     	])){
     		$user = User::where('username', $request->username)->first();
     		if($user->is_admin()){
-    			return redirect()->route('dashboard');
+    			return redirect()->route('pending');
     		}
-    		return redirect()->route('home');
+    		return redirect()->route('available_pets');
     	}
 
 	    return redirect()->back();
