@@ -9,9 +9,20 @@ use App\AdoptionRequest;
 use App\User;
 use Gate;
 
+/*
+    |--------------------------------------------------------------------------
+    | Animal Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the display and editing of the animal model
+    |
+    */
 class AnimalController extends Controller
 {
-
+    /**
+     * Shows all the animals in the table, and will only show the pets the admin wants to.
+     *
+     */
     public function index(){
         if(request()->has('type')){
             $animals = Animals::where('type', request('type'))->paginate(10)->appends('type', request('type'));
@@ -22,11 +33,17 @@ class AnimalController extends Controller
         $adoptions = AdoptionRequest::all();
     	return view('animals.index', compact('animals', 'users', 'adoptions'));
     }
-
+    /**
+     * Shows the page that allows the admin to add a new pet to the table that is available.
+     *
+     */
     public function create(){
     	return view('animals.create');
     }
-
+    /**
+     * Adds the new pet to the table as long as the form as been correctly filled out.
+     *
+     */
     public function store(Request $request){
     	$animal = $this->validate(request(), [
     		'name' => 'required',
@@ -53,12 +70,18 @@ class AnimalController extends Controller
     	$animal->save();
     	return back()->with('success', 'Animal has been added');
     }
-
+    /**
+     * Shows the details of a specific pet.
+     *
+     */
     public function show($id){
     	$animals = Animals::find($id);
     	return view('animals.show', compact('animals'));
     }
-
+    /**
+     * Deletes a pet from the database.
+     *
+     */
     public function destroy($id){
     	$animal = Animals::find($id);
     	$animal->delete();
@@ -66,7 +89,10 @@ class AnimalController extends Controller
         $adoption->delete();
     	return redirect('animals')->with('success', 'Animal has been deleted');
     }
-
+    /**
+     * Updates the details of the pet, with the new details supplied by the admin.
+     *
+     */
     public function update(Request $request, $id){
     	$animals = Animals::find($id);
     	$this->validate(request(),[
@@ -93,7 +119,10 @@ class AnimalController extends Controller
     	$animals->save();
     	return redirect('animals')->with('success', 'Animal has been updated');
     }
-
+    /**
+     * Shows form allowing the admin to change the details of the pet.
+     *
+     */
     public function edit($id){
     	$animals = Animals::find($id);
     	return view('animals.edit', compact('animals'));

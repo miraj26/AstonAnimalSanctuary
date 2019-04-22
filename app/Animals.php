@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Animals extends Model
 {
-    protected $fillable = ['name', 'dob', 'description', 'picture',];
+	/**
+	 * The attributes that are mass assignable.
+	 * @var array
+	 */
+    protected $fillable = ['name', 'dob', 'description', 'image',];
 }

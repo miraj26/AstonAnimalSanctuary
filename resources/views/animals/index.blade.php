@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
@@ -6,6 +6,7 @@
 			<div class="card">
 				<div class="card-header">Display all Pets</div>
 				<div class="card-body">
+					<!-- Filters the number of animals on display by type -->
 					<form>
 						Filter by Pet Type:
 						<select name="type">
@@ -19,9 +20,10 @@
 							<option value="Amphiban">Amphibian</option>
 							<option value="Horse">Horse</option>
 						</select>
-						<input type="submit" /> |
+						<input type="submit" value="Filter" /> |
 						<a href="index/"> Reset </a>
 					</form> <br/>
+					<!-- Table that displays all the animals in the database -->
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -46,10 +48,10 @@
 								<td>{{$animal['availability']}}</td>
 								<?php $adopt = $adoptions->where('animalId', '=', $animal['id'])->where('accepted', '=', 'Approved')->first();
 								?>
-								<td><a href="{{route('user', ['username' => $adopt['username']])}}">{{$adopt['username']}}</a></td>
-								<td><a href="{{action('AnimalController@show', $animal['id'])}}" class="btn btn- primary">Details</a></td>
+								<td><a href="{{route('user', ['username' => $adopt['username']])}}">{{$adopt['username']}}</a></td> <!-- Link to owner details -->
+								<td><a href="{{action('AnimalController@show', $animal['id'])}}" class="btn btn- primary">Details</a></td> <!-- Link to details about the animal -->
 								<td><a href="{{action('AnimalController@edit', $animal['id'])}}" class="btn
-									btn- warning">Edit</a></td>
+									btn- warning">Edit</a></td> <!-- Link to edit the animals record -->
 									<td>
 										<form action="{{action('AnimalController@destroy', $animal['id'])}}"
 										method="post"> @csrf
@@ -61,6 +63,7 @@
 							@endforeach
 						</tbody>
 					</table>
+					<!-- Link to add pet to the database -->
 					<a href="{{action('AnimalController@create')}}" class="btn btn-primary">Add Pet</a>
 				</div>
 			</div>

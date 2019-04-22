@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,6 +12,7 @@
                  </div>
                  @endif
                  <br/>
+                 <!-- Table that displays all the requests that need to be approved -->
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>
@@ -27,6 +28,7 @@
                             <td>{{$adoption->petname}} </td>
                             <td>{{$adoption->username}}</td>
                             <td>
+                                <!-- Decision of the request -->
                                 <form class="form-horizontal" method="POST" action="{{ action('DashboardController@review', [$adoption->id, $adoption->animalId]) }}" enctype="multipart/form-data" >
                                     @csrf
                                     <select name="accepted">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
@@ -16,8 +16,8 @@
 					<div class="alert alert-success">
 						<p>{{ \Session::get('success') }}</p>
 					</div><br /> @endif
-
 					<div class="card-body">
+						<!-- Form to add a new animal to database -->
 						<form class="form-horizontal" method="POST" action="{{url('animals')}}" enctype="multipart/form-data">
 							@csrf
 							<div class="col-md-8">

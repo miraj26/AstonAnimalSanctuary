@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
@@ -21,6 +21,7 @@
 		</div><br />
 		@endif
 		<div class="card-body">
+		<!-- Form to edit certain user details -->
 		<form class="form-horizontal" method="POST" action="{{ action('HomeController@update',
 		$users['id']) }} " enctype="multipart/form-data" >
 		@method('PATCH')

@@ -6,8 +6,22 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 
+/*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
 class LoginController extends Controller
 {
+    /**
+     * Shows correct view according to who has logged in.
+     *
+     */
     public function login(Request $request){
     	
     	if(Auth::attempt([

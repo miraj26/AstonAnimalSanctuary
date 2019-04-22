@@ -8,9 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/pagestyle.css') }}"/>
 </head>
 <body>
+	<!-- Navbar -->
 	@include('layouts.app')
 	<div id="main">
 		@yield('content')
+	<!-- Slideshow -->
 	<div class="slide fade">
 		<img src="{{ asset('images/dogslide.jpeg')}}">
 		<div class="text" id="first">Adopt Now!</div>
@@ -24,6 +26,7 @@
 		<div class="text" id="third">Change a pets life today!</div>
 	</div>
 </div>
+<!-- About section -->
 <div id="about">
 	<b>About Us</b>
 	<br/>
@@ -31,6 +34,7 @@
 			Established in 2019, Aston Pet Sanctuary has rapidly become the UK's most popular Pet Adoption website
 	</section>
 </div>
+<!-- Controls the slideshow -->
 <script src="{{ asset('js/homescript.js')}}"></script>
 
 </body>

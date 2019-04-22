@@ -7,11 +7,19 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Animals;
 use App\AdoptionRequest;
 
+/*
+    |--------------------------------------------------------------------------
+    | AdoptionRequest Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles the user making a request and adding it to the table
+    |
+    */
 class AdoptionRequestController extends Controller
 {
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form containing the details of the adoption request
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,7 +29,10 @@ class AdoptionRequestController extends Controller
         $animals = Animals::find($id);
         return view('adoption_requests.edit', compact('animals'));
     }
-
+    /**
+     * Adds the adoptions request to the database.
+     *
+     */
     public function update(Request $request, $id){
         $animals = Animals::find($id);
         $this->validate(request(),[

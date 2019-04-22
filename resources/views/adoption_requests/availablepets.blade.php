@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -11,6 +11,7 @@
                  {{ session('status') }}
                  </div>
                  @endif
+                 <!-- Filters the pets displayed by the pet -->
                  <form>
                  	Filter by Pet Type:
 	                 <select name="type">
@@ -24,10 +25,11 @@
 	                 	<option value="Amphiban">Amphibian</option>
 	                 	<option value="Horse">Horse</option>
 	                 </select>
-	                 <input type="submit" /> |
+	                 <input type="submit" value="Filter" /> |
 	                 <a href="availablepets/"> Reset </a>
 	             </form>
 	             <br/>
+                 <!-- Table to display pets that are available for adoption -->
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>
@@ -55,7 +57,7 @@
                         @empty
                         @endforelse
                         @if($requested == false)
-                        <a href="{{action('AdoptionRequestController@create', $animal['id'])}}" class="btn btn-primary" role="button">Make Request</a>
+                        <a href="{{action('AdoptionRequestController@create', $animal['id'])}}" class="btn btn-primary" role="button">Make Request</a> <!-- Makes the adoption request -->
                         @endif
                         </td>
                         </tr>
@@ -63,6 +65,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                <!-- Adds type to the url -->
                 {{ $animals->links()}}
                 </div>
             </div>

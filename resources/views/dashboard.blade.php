@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 
 @section('content')
 <div class="container">
@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <!-- Welcomes admin to the portal and informs them what they can do -->
                     Welcome to the admin portal!<br/> <br/>
                     You can view all pending requests <br/>
                     Add pets up for adoption <br/>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Adds navbar -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,6 +12,7 @@
                  </div>
                  @endif
                  <br/>
+                 <!-- Table that displays all adoption requests made by this user -->
                  <table class="table table-striped table-bordered table-hover">
                     <thead>
                          <tr>
