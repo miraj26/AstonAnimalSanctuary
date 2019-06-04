@@ -62,7 +62,7 @@ class HomeController extends Controller
      */
     public function pets(){
         if(request()->has('type')){
-            $animalsQuery = Animals::where('type', request('type'))->paginate(10)->appends('type', request('type'));
+            $animalsQuery = Animals::where('type', request('type'))->paginate(5)->appends('type', request('type'));
         } else{
             $animalsQuery = Animals::paginate(10);
         }
